@@ -1,0 +1,3 @@
+[submodule "dexlib"]
+	path = dexlib
+	url = https://github.com/rchiossi/dexlib.git
