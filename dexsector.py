@@ -74,6 +74,11 @@ def execute(args):
     if args.class_def != None:
         print p.parse(dex.class_defs[args.class_def])
 
+    if args.class_data_list:
+        print p.parse(dex.class_data_table)
+    if args.class_data != None:
+        print p.parse(dex.class_data_table[args.class_data])
+
     if args.code_item_list:
         print p.parse(dex.code_item_table)
     if args.code_item != None:
@@ -107,8 +112,11 @@ def main():
     parser.add_argument('-M','--method_id_list',action='store_true',help='method_id list data')
     parser.add_argument('-m','--method_id',type=int,help='method_id data at given index')
 
-    parser.add_argument('-L','--class_def_list',action='store_true',help='class_def_item list data')
-    parser.add_argument('-l','--class_def',type=int,help='class_def_item data at given index')
+    parser.add_argument('-D','--class_def_list',action='store_true',help='class_def_item list data')
+    parser.add_argument('-d','--class_def',type=int,help='class_def_item data at given index')
+
+    parser.add_argument('-L','--class_data_list',action='store_true',help='class_data_item list data')
+    parser.add_argument('-l','--class_data',type=int,help='class_data_item data at given index')
 
     parser.add_argument('-C','--code_item_list',action='store_true',help='code_item list data')
     parser.add_argument('-c','--code_item',type=int,help='code_item data at given index')
